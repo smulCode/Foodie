@@ -263,7 +263,7 @@ header {
 }
 
 .section-cards {
-  background-image: url(/FoodieBar/IMG/pexels-trang-doan-1092730.jpg);
+  background-image: url(IMG/pexels-trang-doan-1092730.jpg);
   min-height: 1200px;
   background-attachment: fixed;
   background-position: center;
@@ -970,7 +970,9 @@ li {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "subs subs social social" ". thanks thanks ." "copy copy copy copy";
+        grid-template-areas: "subs subs social social"
+ ". thanks thanks ."
+ "copy copy copy copy";
     font-family: "Poppins", sans-serif;
     place-content: center;
     background: linear-gradient(315deg, #111);
