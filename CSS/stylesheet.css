@@ -669,6 +669,9 @@ li {
 }
 
 @media only screen and (max-width: 639px) {
+    .section-cards {
+    background-attachment: scroll;}
+  
   .intro-section {
     padding: 0;
   }
