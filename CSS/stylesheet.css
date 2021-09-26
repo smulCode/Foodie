@@ -744,6 +744,10 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
+  
+    .section-cards {
+    background-attachment: scroll;}
+  
   header {
     z-index: 90;
     position: fixed;
