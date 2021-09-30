@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
 
@@ -6,11 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior:smooth;
 }
 
 html {
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 }
 body {
   background-color: #111;
@@ -36,7 +36,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: rgba(17, 17, 17, 0.438);
+ background-color: rgba(17, 17, 17, 0.438);
 }
 
 .hamburger {
@@ -189,7 +189,7 @@ header {
 
   img {
     width: 200px;
-    height: 160px;
+    height: 180px;
   }
 
   p {
@@ -213,7 +213,7 @@ header {
 }
 
 .section-cards {
-  background: url("../IMG/background.jpg");
+  background-image: url(/FoodieBar/IMG/pexels-trang-doan-1092730.JPG);
 
   min-height: 1200px;
   background-attachment: fixed;
@@ -237,6 +237,7 @@ header {
 
 /*Weekmenu*/
 .weekMenu-section {
+  background-color: rgba(0, 0, 0, 0.692);
   margin-bottom: 3em;
   padding-bottom: 3em;
   h1 {
@@ -246,51 +247,143 @@ header {
     width: 100%;
     text-align: center;
     background-color: #111;
-    top: 1em;
+   
+    
   }
 }
-.container-menu {
-  margin-top: 5em;
+
+.carousel {
+  position: relative;
+  height: 500px;
+  width: clamp(300px, 40%, 350px);
+  margin: 0 auto;
+  margin-top: 2em;
+
+
+ 
 }
-.gallery {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(7, 65vw);
-  grid-template-rows: 1fr;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  height: 85em;
-  scroll-snap-type: both mandatory;
-  scroll-padding: 1rem;
+
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-row: 1;
+}
+.carousel__track-container {
+  // background: lightgreen;
+  height: 100%;
+  position: relative;
   overflow: hidden;
 }
 
-.active {
-  scroll-snap-type: unset;
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
 }
 
-li {
-  scroll-snap-align: center;
-  display: inline-block;
-  border-radius: 3px;
-  font-size: 1em;
-  max-width: 400px;
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-.dayMenu {
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel__button--left {
+  left: -35px;
+}
+
+.carousel__button--right {
+  right: -35px;
+}
+.carousel__button i {
+  width: 25px;
+  color: #fefefe;
+
+ 
+  
+}
+
+.carousel__nav {
+  //   background:pink;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
 
-  img {
-    width: 100%;
-    height: 400px;
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 1);
+
+  margin: 0 12px;
+  cursor: pointer;
+  border: 2px solid rgb(132, 165, 157);
+}
+.carousel__indicator.current-slide {
+  background: #111;
+  border: 1px solid rgba(132, 165, 157, 0.514);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.carousel__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel {
+  li:nth-of-type(1) {
+    background: #b3793a;
+  }
+  li:nth-of-type(2) {
+    background: #f5cac3;
+  }
+  li:nth-of-type(3) {
+    background: #84a59d;
+  }
+
+  li:nth-of-type(4) {
+    background: #bde2d4;
+  }
+  li:nth-of-type(5) {
+    background: #f28482;
+  }
+  li:nth-of-type(6) {
+    background: #e63a38;
+  }
+  li:nth-of-type(7) {
+    background: #8d82f2;
   }
 }
 
-.food-day {
-  max-width: 400px;
+.slide-content {
+  position: relative;
+  height: 100%;
+  margin-top: 1em;
+  grid-row: 2;
 }
 
 /* Button*/
@@ -302,9 +395,11 @@ li {
   width: 130px;
   cursor: pointer;
   margin-top: 1.5em;
+  margin: 0 auto;
   a {
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 14px;
   }
 }
 
@@ -312,6 +407,7 @@ li {
   color: #111;
   transition: all 0.5s;
   position: relative;
+  margin-top:2.5em;
 }
 .btn-day::before {
   content: "";
@@ -554,9 +650,10 @@ li {
   // body {
   //   background-color: pink;
   // }
-  
-    .section-cards {
-    background-attachment: scroll;}
+
+  .section-cards {
+    background-attachment: scroll;
+  }
 
   .intro-section {
     padding: 0;
@@ -577,29 +674,7 @@ li {
     padding-bottom: 4em;
   }
 
-  .gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(7, 55em);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    height: 65vh;
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-    overflow: hidden;
-    text-align: center;
-
-    img {
-      height: 40%;
-    }
-  }
-
-  .dayMenu {
-    h2 {
-      margin-top: 0.5em;
-    }
-  }
+ 
 
   .footer-container {
     display: grid;
@@ -632,12 +707,13 @@ li {
     width: 80%;
     height: 100%;
   }
+  .nav-logo {
+    margin: 0 auto;
+  }
 }
+
+
 @media only screen and (max-width: 768px) {
-  
-    .section-cards {
-    background-attachment: scroll;}
-  
   header {
     z-index: 90;
     position: fixed;
@@ -675,6 +751,9 @@ li {
     font-size: 1.7em;
     transition: 0.4s;
     border-bottom: 1px solid #eab847;
+  }
+  .nav-logo {
+    margin: 0 auto;
   }
 
   .hamburger {
@@ -756,29 +835,7 @@ li {
     }
   }
 
-  .gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(7, 55vw);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    max-height: 42em;
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-    overflow: hidden;
-    text-align: center;
 
-    img {
-      height: 40%;
-    }
-  }
-
-  .dayMenu {
-    h2 {
-      margin-top: 0.5em;
-    }
-  }
 
   .footer-container {
     display: grid;
@@ -839,6 +896,7 @@ li {
 
   .food-text {
     justify-content: column;
+    
   }
 
   .sub-text {
@@ -848,24 +906,7 @@ li {
     font-size: 0.8em;
   }
 
-  .gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(7, 25em);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    height: 42em;
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-    overflow: hidden;
-  }
 
-  .dayMenu {
-    h2 {
-      margin-top: 2em;
-    }
-  }
 
   .footer-container {
     display: grid;
