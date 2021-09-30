@@ -262,7 +262,7 @@ header {
 }
 
 .section-cards {
-  background-image: url(/FoodieBar/IMG/pexels-trang-doan-1092730.JPG);
+  background-image: url("../IMG/background.JPG");
   min-height: 1200px;
   background-attachment: fixed;
   background-position: center;
