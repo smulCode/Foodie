@@ -758,6 +758,13 @@ header {
 }
 
 @media only screen and (max-width: 639px) {
+  
+    .main h2{
+    font-size:15vw;
+  }
+  .main h4{
+    font-size:5vw;
+  }
   .section-cards {
     background-attachment: scroll;
   }
